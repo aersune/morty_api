@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:morty_api/common/app_colors.dart';
 import 'package:morty_api/locator_service.dart'  as di;
 
 import 'feature/presentation/bloc/person_list_cubit/person_list_cubit.dart';
@@ -23,9 +24,8 @@ class MyApp extends StatelessWidget {
       BlocProvider(create: (_) => di.sl<PersonSearchBloc>()),
     ], child: MaterialApp(
       title: 'Rick and Morty',
-      theme: ThemeData.dark().copyWith(
-
-        scaffoldBackgroundColor: Colors.grey
+      theme: ThemeData.dark(useMaterial3: true).copyWith(
+        scaffoldBackgroundColor: AppColors.greyColor
       ),
       home: HomePage(),
     ));
